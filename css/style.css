@@ -341,7 +341,9 @@ img {
 .modal-checkbox-btn:checked + .check-icon {
   background-image: url(../img/icon-checked.svg);
 }
-
+.modal-checkbox-btn:focus + .check-icon {
+  background-image: url(../img/icon-checked.svg);
+}
 /* =================================================== */
 
 /* ====================LOGO=========================== */
@@ -701,8 +703,8 @@ img {
   position: relative;
 }
 .footer-btn-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   fill: #ffffff;
   position: absolute;
   top: 50%;
