@@ -62,6 +62,8 @@ img {
   padding: 94px 0;
 }
 
+/* base end */
+
 .button {
   min-width: 200px;
   height: 50px;
@@ -79,17 +81,19 @@ img {
   transition-duration: 250ms;
 
   color: #ffffff;
-  background-color: #2f66e7;
+  background-color: var(--hover-focus-color);
 }
 .button:hover,
 .button:focus {
-  background-color: var(--hover-focus-color);
+  background-color: #188ce8;
 }
 
 /* ==================================================== */
 
 /* --------------------HEADER------------------------- */
-/* .x */
+.header {
+  border: 1px solid #ececec;
+}
 .header-container {
   display: flex;
   padding: 24px 0;
@@ -116,6 +120,7 @@ img {
 }
 .contact-link {
   font-family: "Roboto", sans-serif;
+  font-weight: 500;
   display: flex;
   letter-spacing: 0.03em;
   align-items: center;
@@ -256,7 +261,7 @@ img {
 .modal-input {
   position: relative;
   display: block;
-  width: 450px;
+  width: 100%;
   height: 40px;
   padding: 15px;
   padding-left: 42px;
@@ -379,6 +384,8 @@ img {
       rgba(47, 48, 58, 0.4)
     ),
     url(../img/hero-bg\ .png);
+  max-width: 1600px;
+  align-items: center;
 }
 .hero-title {
   font-style: normal;
@@ -427,8 +434,8 @@ img {
   line-height: 16px;
   letter-spacing: 0.03em;
   margin-bottom: 10px;
-
   color: #212121;
+  text-transform: uppercase;
 }
 .features-item {
   margin-top: 30px;
@@ -439,7 +446,7 @@ img {
 .features-item::before {
   display: block;
   content: "";
-  width: 270px;
+  width: 100%;
   height: 120px;
   background-color: #f5f4fa;
   background-repeat: no-repeat;
@@ -520,6 +527,7 @@ img {
 }
 .team-item {
   flex-basis: calc((100% - 30px * 4) / 4);
+  text-align: center;
   background-color: #ffffff;
   margin-top: 30px;
   margin-left: 30px;
@@ -535,7 +543,7 @@ img {
   padding: 30px 20px;
 }
 .team-icon-list {
-  display: flex;
+  display: inline-flex;
 }
 
 .team-icon-item:not(:last-child) {
@@ -592,9 +600,11 @@ img {
   justify-content: center;
   align-items: center;
   fill: #afb1b8;
-  width: 170px;
+  width: 100%;
   height: 90px;
   border: 1px solid #afb1b8;
+  box-sizing: border-box;
+  border-radius: 4px;
 
   transition-duration: 250ms;
 }
@@ -621,7 +631,6 @@ img {
   color: rgba(255, 255, 255, 0.6);
 }
 .join-text {
-  margin-top: 10px;
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
@@ -637,6 +646,8 @@ img {
 }
 .footer-main-container {
   display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 .footer-container .team-icon-link {
   display: flex;
@@ -675,11 +686,13 @@ img {
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
-  background-color: rgba(47, 48, 58, 01);
   border-radius: 4px;
   padding: 15px;
   margin-right: 12px;
   outline: none;
+
+  background-color: rgba(47, 48, 58, 01);
+  color: #ffffff;
 }
 .footer-input::placeholder {
   color: rgba(255, 255, 255, 0.6);
@@ -699,9 +712,6 @@ img {
 /* ================================================== */
 
 /* =================PORTFOLIO======================== */
-.btn-container {
-  margin: 0 auto;
-}
 .btn-list {
   display: flex;
   flex-wrap: wrap;
@@ -738,25 +748,32 @@ img {
 .btn:focus {
   color: #ffffff;
   background-color: var(--hover-focus-color);
+  outline: none;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -30px;
+  margin-left: -30px;
   margin-top: -30px;
 }
-.protflio-item {
+.portfolio-item {
   flex-basis: calc((100% - 30px * 3) / 3);
-  margin-right: 30px;
+  margin-left: 30px;
   margin-top: 30px;
   border: 1px solid #eeeeee;
-  transition-property: background-color;
+
   transition-duration: 250ms;
 }
-.protflio-item:focus,
-.protflio-item:hover {
+.portfolio-item:focus,
+.portfolio-item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.portfolio-link-img {
+  transition-property: background-color;
+  transition-duration: 250ms;
 }
 .portfolio-img {
   position: relative;
@@ -781,8 +798,8 @@ img {
 
   opacity: 0;
 }
-.protflio-item:focus .overlay,
-.protflio-item:hover .overlay {
+.portfolio-link-img:focus .overlay,
+.portfolio-link-img:hover .overlay {
   opacity: 1;
   background-color: rgba(33, 150, 243, 0.9);
   transform: translateY(0%);
